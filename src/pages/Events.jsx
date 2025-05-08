@@ -2,14 +2,6 @@ import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import EventList from "../components/EventList";
 
-// const DUMMY_EVENTS = [
-//   { id: "e1", title: "Event 1" },
-//   { id: "e2", title: "Event 2" },
-//   { id: "e3", title: "Event 3" },
-//   { id: "e4", title: "Event 4" },
-//   { id: "e5", title: "Event 5" },
-// ];
-
 function EventsPage() {
   const events = useLoaderData();
 
