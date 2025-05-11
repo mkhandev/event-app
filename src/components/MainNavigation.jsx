@@ -6,6 +6,8 @@ import NewsletterSignup from "./NewsletterSignup";
 function MainNavigation() {
   const token = useRouteLoaderData("root");
 
+  console.log(token);
+
   return (
     <header className={classes.header}>
       <nav>
@@ -42,7 +44,7 @@ function MainNavigation() {
             </NavLink>
           </li>
 
-          {!token && (
+          {(!token || token == "EXPIRED") && (
             <li>
               <NavLink
                 to="/auth?mode=login"
@@ -55,7 +57,7 @@ function MainNavigation() {
             </li>
           )}
 
-          {token && (
+          {token && token != "EXPIRED" && (
             <li>
               <Form action="/logout" method="post">
                 <button>Logout</button>
